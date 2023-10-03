@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stoic_app/data/dto/quotes_dto/quote_dto.dart';
 
 part 'quote.freezed.dart';
 
