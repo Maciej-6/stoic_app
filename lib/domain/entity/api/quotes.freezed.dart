@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'fetch_quote_request.dart';
+part of 'quotes.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,28 +15,26 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$FetchQuoteRequest {
+mixin _$Quotes {
   String get text => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FetchQuoteRequestCopyWith<FetchQuoteRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  $QuotesCopyWith<Quotes> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FetchQuoteRequestCopyWith<$Res> {
-  factory $FetchQuoteRequestCopyWith(
-          FetchQuoteRequest value, $Res Function(FetchQuoteRequest) then) =
-      _$FetchQuoteRequestCopyWithImpl<$Res, FetchQuoteRequest>;
+abstract class $QuotesCopyWith<$Res> {
+  factory $QuotesCopyWith(Quotes value, $Res Function(Quotes) then) =
+      _$QuotesCopyWithImpl<$Res, Quotes>;
   @useResult
   $Res call({String text, String author});
 }
 
 /// @nodoc
-class _$FetchQuoteRequestCopyWithImpl<$Res, $Val extends FetchQuoteRequest>
-    implements $FetchQuoteRequestCopyWith<$Res> {
-  _$FetchQuoteRequestCopyWithImpl(this._value, this._then);
+class _$QuotesCopyWithImpl<$Res, $Val extends Quotes>
+    implements $QuotesCopyWith<$Res> {
+  _$QuotesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -63,22 +61,21 @@ class _$FetchQuoteRequestCopyWithImpl<$Res, $Val extends FetchQuoteRequest>
 }
 
 /// @nodoc
-abstract class _$$FetchQuoteRequestImplCopyWith<$Res>
-    implements $FetchQuoteRequestCopyWith<$Res> {
-  factory _$$FetchQuoteRequestImplCopyWith(_$FetchQuoteRequestImpl value,
-          $Res Function(_$FetchQuoteRequestImpl) then) =
-      __$$FetchQuoteRequestImplCopyWithImpl<$Res>;
+abstract class _$$QuotesImplCopyWith<$Res> implements $QuotesCopyWith<$Res> {
+  factory _$$QuotesImplCopyWith(
+          _$QuotesImpl value, $Res Function(_$QuotesImpl) then) =
+      __$$QuotesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String text, String author});
 }
 
 /// @nodoc
-class __$$FetchQuoteRequestImplCopyWithImpl<$Res>
-    extends _$FetchQuoteRequestCopyWithImpl<$Res, _$FetchQuoteRequestImpl>
-    implements _$$FetchQuoteRequestImplCopyWith<$Res> {
-  __$$FetchQuoteRequestImplCopyWithImpl(_$FetchQuoteRequestImpl _value,
-      $Res Function(_$FetchQuoteRequestImpl) _then)
+class __$$QuotesImplCopyWithImpl<$Res>
+    extends _$QuotesCopyWithImpl<$Res, _$QuotesImpl>
+    implements _$$QuotesImplCopyWith<$Res> {
+  __$$QuotesImplCopyWithImpl(
+      _$QuotesImpl _value, $Res Function(_$QuotesImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +84,7 @@ class __$$FetchQuoteRequestImplCopyWithImpl<$Res>
     Object? text = null,
     Object? author = null,
   }) {
-    return _then(_$FetchQuoteRequestImpl(
+    return _then(_$QuotesImpl(
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -102,8 +99,8 @@ class __$$FetchQuoteRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchQuoteRequestImpl implements _FetchQuoteRequest {
-  const _$FetchQuoteRequestImpl({required this.text, required this.author});
+class _$QuotesImpl implements _Quotes {
+  const _$QuotesImpl({required this.text, required this.author});
 
   @override
   final String text;
@@ -112,14 +109,14 @@ class _$FetchQuoteRequestImpl implements _FetchQuoteRequest {
 
   @override
   String toString() {
-    return 'FetchQuoteRequest(text: $text, author: $author)';
+    return 'Quotes(text: $text, author: $author)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchQuoteRequestImpl &&
+            other is _$QuotesImpl &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.author, author) || other.author == author));
   }
@@ -130,15 +127,14 @@ class _$FetchQuoteRequestImpl implements _FetchQuoteRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchQuoteRequestImplCopyWith<_$FetchQuoteRequestImpl> get copyWith =>
-      __$$FetchQuoteRequestImplCopyWithImpl<_$FetchQuoteRequestImpl>(
-          this, _$identity);
+  _$$QuotesImplCopyWith<_$QuotesImpl> get copyWith =>
+      __$$QuotesImplCopyWithImpl<_$QuotesImpl>(this, _$identity);
 }
 
-abstract class _FetchQuoteRequest implements FetchQuoteRequest {
-  const factory _FetchQuoteRequest(
+abstract class _Quotes implements Quotes {
+  const factory _Quotes(
       {required final String text,
-      required final String author}) = _$FetchQuoteRequestImpl;
+      required final String author}) = _$QuotesImpl;
 
   @override
   String get text;
@@ -146,6 +142,6 @@ abstract class _FetchQuoteRequest implements FetchQuoteRequest {
   String get author;
   @override
   @JsonKey(ignore: true)
-  _$$FetchQuoteRequestImplCopyWith<_$FetchQuoteRequestImpl> get copyWith =>
+  _$$QuotesImplCopyWith<_$QuotesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,10 +1,8 @@
-import 'package:stoic_app/domain/entity/api/quote.dart';
-import 'package:stoic_app/domain/entity/api/requests/fetch_quote_request.dart';
-
-import '../utils/response.dart' as app;
+import 'package:stoic_app/domain/entity/api/quotes.dart';
+import 'package:stoic_app/domain/entity/api/requests/fetch_quotes_request.dart';
+import 'package:stoic_app/domain/utils/response.dart' as app;
 
 abstract class ApiRepository {
 
-  Future<app.Response<Quote>> fetchQuote(FetchQuoteRequest payload);
-
+  Future<app.Response<Quotes>> fetchQuotes(FetchQuotesRequest payload);
 }

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'quote_state.dart';
+part of 'pagination_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,64 +15,64 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$QuoteState {
+mixin _$PaginationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(String text, String author) success,
+    required TResult Function(bool isFinish) success,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(String text, String author)? success,
+    TResult? Function(bool isFinish)? success,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(String text, String author)? success,
+    TResult Function(bool isFinish)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Error value) error,
+    required TResult Function(_PaginationLoading value) loading,
+    required TResult Function(_PaginationSuccess value) success,
+    required TResult Function(_PaginationError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Error value)? error,
+    TResult? Function(_PaginationLoading value)? loading,
+    TResult? Function(_PaginationSuccess value)? success,
+    TResult? Function(_PaginationError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_PaginationLoading value)? loading,
+    TResult Function(_PaginationSuccess value)? success,
+    TResult Function(_PaginationError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $QuoteStateCopyWith<$Res> {
-  factory $QuoteStateCopyWith(
-          QuoteState value, $Res Function(QuoteState) then) =
-      _$QuoteStateCopyWithImpl<$Res, QuoteState>;
+abstract class $PaginationStateCopyWith<$Res> {
+  factory $PaginationStateCopyWith(
+          PaginationState value, $Res Function(PaginationState) then) =
+      _$PaginationStateCopyWithImpl<$Res, PaginationState>;
 }
 
 /// @nodoc
-class _$QuoteStateCopyWithImpl<$Res, $Val extends QuoteState>
-    implements $QuoteStateCopyWith<$Res> {
-  _$QuoteStateCopyWithImpl(this._value, this._then);
+class _$PaginationStateCopyWithImpl<$Res, $Val extends PaginationState>
+    implements $PaginationStateCopyWith<$Res> {
+  _$PaginationStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -81,35 +81,35 @@ class _$QuoteStateCopyWithImpl<$Res, $Val extends QuoteState>
 }
 
 /// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
+abstract class _$$PaginationLoadingImplCopyWith<$Res> {
+  factory _$$PaginationLoadingImplCopyWith(_$PaginationLoadingImpl value,
+          $Res Function(_$PaginationLoadingImpl) then) =
+      __$$PaginationLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$QuoteStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+class __$$PaginationLoadingImplCopyWithImpl<$Res>
+    extends _$PaginationStateCopyWithImpl<$Res, _$PaginationLoadingImpl>
+    implements _$$PaginationLoadingImplCopyWith<$Res> {
+  __$$PaginationLoadingImplCopyWithImpl(_$PaginationLoadingImpl _value,
+      $Res Function(_$PaginationLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
+class _$PaginationLoadingImpl implements _PaginationLoading {
+  const _$PaginationLoadingImpl();
 
   @override
   String toString() {
-    return 'QuoteState.loading()';
+    return 'PaginationState.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+        (other.runtimeType == runtimeType && other is _$PaginationLoadingImpl);
   }
 
   @override
@@ -119,7 +119,7 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(String text, String author) success,
+    required TResult Function(bool isFinish) success,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -129,7 +129,7 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(String text, String author)? success,
+    TResult? Function(bool isFinish)? success,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -139,7 +139,7 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(String text, String author)? success,
+    TResult Function(bool isFinish)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -152,9 +152,9 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Error value) error,
+    required TResult Function(_PaginationLoading value) loading,
+    required TResult Function(_PaginationSuccess value) success,
+    required TResult Function(_PaginationError value) error,
   }) {
     return loading(this);
   }
@@ -162,9 +162,9 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Error value)? error,
+    TResult? Function(_PaginationLoading value)? loading,
+    TResult? Function(_PaginationSuccess value)? success,
+    TResult? Function(_PaginationError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -172,9 +172,9 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_PaginationLoading value)? loading,
+    TResult Function(_PaginationSuccess value)? success,
+    TResult Function(_PaginationError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -184,109 +184,103 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements QuoteState {
-  const factory _Loading() = _$LoadingImpl;
+abstract class _PaginationLoading implements PaginationState {
+  const factory _PaginationLoading() = _$PaginationLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
+abstract class _$$PaginationSuccessImplCopyWith<$Res> {
+  factory _$$PaginationSuccessImplCopyWith(_$PaginationSuccessImpl value,
+          $Res Function(_$PaginationSuccessImpl) then) =
+      __$$PaginationSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String text, String author});
+  $Res call({bool isFinish});
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$QuoteStateCopyWithImpl<$Res, _$SuccessImpl>
-    implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+class __$$PaginationSuccessImplCopyWithImpl<$Res>
+    extends _$PaginationStateCopyWithImpl<$Res, _$PaginationSuccessImpl>
+    implements _$$PaginationSuccessImplCopyWith<$Res> {
+  __$$PaginationSuccessImplCopyWithImpl(_$PaginationSuccessImpl _value,
+      $Res Function(_$PaginationSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? text = null,
-    Object? author = null,
+    Object? isFinish = null,
   }) {
-    return _then(_$SuccessImpl(
-      null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == author
-          ? _value.author
-          : author // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$PaginationSuccessImpl(
+      null == isFinish
+          ? _value.isFinish
+          : isFinish // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(this.text, this.author);
+class _$PaginationSuccessImpl implements _PaginationSuccess {
+  const _$PaginationSuccessImpl(this.isFinish);
 
   @override
-  final String text;
-  @override
-  final String author;
+  final bool isFinish;
 
   @override
   String toString() {
-    return 'QuoteState.success(text: $text, author: $author)';
+    return 'PaginationState.success(isFinish: $isFinish)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.author, author) || other.author == author));
+            other is _$PaginationSuccessImpl &&
+            (identical(other.isFinish, isFinish) ||
+                other.isFinish == isFinish));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, text, author);
+  int get hashCode => Object.hash(runtimeType, isFinish);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
+  _$$PaginationSuccessImplCopyWith<_$PaginationSuccessImpl> get copyWith =>
+      __$$PaginationSuccessImplCopyWithImpl<_$PaginationSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(String text, String author) success,
+    required TResult Function(bool isFinish) success,
     required TResult Function(String error) error,
   }) {
-    return success(text, author);
+    return success(isFinish);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(String text, String author)? success,
+    TResult? Function(bool isFinish)? success,
     TResult? Function(String error)? error,
   }) {
-    return success?.call(text, author);
+    return success?.call(isFinish);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(String text, String author)? success,
+    TResult Function(bool isFinish)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(text, author);
+      return success(isFinish);
     }
     return orElse();
   }
@@ -294,9 +288,9 @@ class _$SuccessImpl implements _Success {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Error value) error,
+    required TResult Function(_PaginationLoading value) loading,
+    required TResult Function(_PaginationSuccess value) success,
+    required TResult Function(_PaginationError value) error,
   }) {
     return success(this);
   }
@@ -304,9 +298,9 @@ class _$SuccessImpl implements _Success {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Error value)? error,
+    TResult? Function(_PaginationLoading value)? loading,
+    TResult? Function(_PaginationSuccess value)? success,
+    TResult? Function(_PaginationError value)? error,
   }) {
     return success?.call(this);
   }
@@ -314,9 +308,9 @@ class _$SuccessImpl implements _Success {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_PaginationLoading value)? loading,
+    TResult Function(_PaginationSuccess value)? success,
+    TResult Function(_PaginationError value)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -326,32 +320,31 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements QuoteState {
-  const factory _Success(final String text, final String author) =
-      _$SuccessImpl;
+abstract class _PaginationSuccess implements PaginationState {
+  const factory _PaginationSuccess(final bool isFinish) =
+      _$PaginationSuccessImpl;
 
-  String get text;
-  String get author;
+  bool get isFinish;
   @JsonKey(ignore: true)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+  _$$PaginationSuccessImplCopyWith<_$PaginationSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ErrorImplCopyWith<$Res> {
-  factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
-      __$$ErrorImplCopyWithImpl<$Res>;
+abstract class _$$PaginationErrorImplCopyWith<$Res> {
+  factory _$$PaginationErrorImplCopyWith(_$PaginationErrorImpl value,
+          $Res Function(_$PaginationErrorImpl) then) =
+      __$$PaginationErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$QuoteStateCopyWithImpl<$Res, _$ErrorImpl>
-    implements _$$ErrorImplCopyWith<$Res> {
-  __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+class __$$PaginationErrorImplCopyWithImpl<$Res>
+    extends _$PaginationStateCopyWithImpl<$Res, _$PaginationErrorImpl>
+    implements _$$PaginationErrorImplCopyWith<$Res> {
+  __$$PaginationErrorImplCopyWithImpl(
+      _$PaginationErrorImpl _value, $Res Function(_$PaginationErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -359,7 +352,7 @@ class __$$ErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? error = null,
   }) {
-    return _then(_$ErrorImpl(
+    return _then(_$PaginationErrorImpl(
       null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -370,22 +363,22 @@ class __$$ErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorImpl implements _Error {
-  const _$ErrorImpl(this.error);
+class _$PaginationErrorImpl implements _PaginationError {
+  const _$PaginationErrorImpl(this.error);
 
   @override
   final String error;
 
   @override
   String toString() {
-    return 'QuoteState.error(error: $error)';
+    return 'PaginationState.error(error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorImpl &&
+            other is _$PaginationErrorImpl &&
             (identical(other.error, error) || other.error == error));
   }
 
@@ -395,14 +388,15 @@ class _$ErrorImpl implements _Error {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
+  _$$PaginationErrorImplCopyWith<_$PaginationErrorImpl> get copyWith =>
+      __$$PaginationErrorImplCopyWithImpl<_$PaginationErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(String text, String author) success,
+    required TResult Function(bool isFinish) success,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -412,7 +406,7 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(String text, String author)? success,
+    TResult? Function(bool isFinish)? success,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -422,7 +416,7 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(String text, String author)? success,
+    TResult Function(bool isFinish)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -435,9 +429,9 @@ class _$ErrorImpl implements _Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Error value) error,
+    required TResult Function(_PaginationLoading value) loading,
+    required TResult Function(_PaginationSuccess value) success,
+    required TResult Function(_PaginationError value) error,
   }) {
     return error(this);
   }
@@ -445,9 +439,9 @@ class _$ErrorImpl implements _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Error value)? error,
+    TResult? Function(_PaginationLoading value)? loading,
+    TResult? Function(_PaginationSuccess value)? success,
+    TResult? Function(_PaginationError value)? error,
   }) {
     return error?.call(this);
   }
@@ -455,9 +449,9 @@ class _$ErrorImpl implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_PaginationLoading value)? loading,
+    TResult Function(_PaginationSuccess value)? success,
+    TResult Function(_PaginationError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -467,11 +461,11 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements QuoteState {
-  const factory _Error(final String error) = _$ErrorImpl;
+abstract class _PaginationError implements PaginationState {
+  const factory _PaginationError(final String error) = _$PaginationErrorImpl;
 
   String get error;
   @JsonKey(ignore: true)
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+  _$$PaginationErrorImplCopyWith<_$PaginationErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

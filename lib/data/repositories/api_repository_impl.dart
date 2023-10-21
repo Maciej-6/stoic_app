@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:stoic_app/data/dto/quotes_dto/quote_dto.dart';
-import 'package:stoic_app/domain/entity/api/quote.dart';
-import 'package:stoic_app/domain/entity/api/requests/fetch_quote_request.dart';
+import 'package:stoic_app/data/dto/quotes_dto/quotes_dto.dart';
+import 'package:stoic_app/domain/entity/api/quotes.dart';
+import 'package:stoic_app/domain/entity/api/requests/fetch_quotes_request.dart';
 import 'package:stoic_app/domain/repositories/api_repository.dart';
-
 import 'package:stoic_app/domain/utils/response.dart' as app;
 
 class ApiRepositoryImpl implements ApiRepository {
@@ -24,17 +24,17 @@ class ApiRepositoryImpl implements ApiRepository {
     );
 
   @override
-  Future<app.Response<Quote>> fetchQuote(FetchQuoteRequest payload) async {
+  Future<app.Response<Quotes>> fetchQuotes(FetchQuotesRequest payload) async {
     try {
       final response = await _dio.get(
-        '/quote',
+        '/quotes',
         queryParameters: {
           'text': payload.text,
           'author': payload.author,
         },
       );
-      final quoteDto = QuoteDto.fromJson(response.data);
-      return app.Response.success(quoteDto.toEntity);
+      final quotesDto = QuotesDto.fromJson(response.data as Map<String, dynamic>);
+      return app.Response.success(quotesDto.toEntity);
     } catch (e) {
       return app.Response.failure(e.toString());
     }

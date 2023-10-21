@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'quote_dto.dart';
+part of 'quotes_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$QuoteDtoImpl _$$QuoteDtoImplFromJson(Map<String, dynamic> json) =>
-    _$QuoteDtoImpl(
+_$QuotesDtoImpl _$$QuotesDtoImplFromJson(Map<String, dynamic> json) =>
+    _$QuotesDtoImpl(
       text: json['text'] as String,
       author: json['author'] as String,
     );
 
-Map<String, dynamic> _$$QuoteDtoImplToJson(_$QuoteDtoImpl instance) =>
+Map<String, dynamic> _$$QuotesDtoImplToJson(_$QuotesDtoImpl instance) =>
     <String, dynamic>{
       'text': instance.text,
       'author': instance.author,

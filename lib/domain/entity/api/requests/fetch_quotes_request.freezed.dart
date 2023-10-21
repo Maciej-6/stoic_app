@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'quote_dto.dart';
+part of 'fetch_quotes_request.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,33 +14,29 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-QuoteDto _$QuoteDtoFromJson(Map<String, dynamic> json) {
-  return _QuoteDto.fromJson(json);
-}
-
 /// @nodoc
-mixin _$QuoteDto {
+mixin _$FetchQuotesRequest {
   String get text => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $QuoteDtoCopyWith<QuoteDto> get copyWith =>
+  $FetchQuotesRequestCopyWith<FetchQuotesRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $QuoteDtoCopyWith<$Res> {
-  factory $QuoteDtoCopyWith(QuoteDto value, $Res Function(QuoteDto) then) =
-      _$QuoteDtoCopyWithImpl<$Res, QuoteDto>;
+abstract class $FetchQuotesRequestCopyWith<$Res> {
+  factory $FetchQuotesRequestCopyWith(
+          FetchQuotesRequest value, $Res Function(FetchQuotesRequest) then) =
+      _$FetchQuotesRequestCopyWithImpl<$Res, FetchQuotesRequest>;
   @useResult
   $Res call({String text, String author});
 }
 
 /// @nodoc
-class _$QuoteDtoCopyWithImpl<$Res, $Val extends QuoteDto>
-    implements $QuoteDtoCopyWith<$Res> {
-  _$QuoteDtoCopyWithImpl(this._value, this._then);
+class _$FetchQuotesRequestCopyWithImpl<$Res, $Val extends FetchQuotesRequest>
+    implements $FetchQuotesRequestCopyWith<$Res> {
+  _$FetchQuotesRequestCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -67,22 +63,22 @@ class _$QuoteDtoCopyWithImpl<$Res, $Val extends QuoteDto>
 }
 
 /// @nodoc
-abstract class _$$QuoteDtoImplCopyWith<$Res>
-    implements $QuoteDtoCopyWith<$Res> {
-  factory _$$QuoteDtoImplCopyWith(
-          _$QuoteDtoImpl value, $Res Function(_$QuoteDtoImpl) then) =
-      __$$QuoteDtoImplCopyWithImpl<$Res>;
+abstract class _$$FetchQuotesRequestImplCopyWith<$Res>
+    implements $FetchQuotesRequestCopyWith<$Res> {
+  factory _$$FetchQuotesRequestImplCopyWith(_$FetchQuotesRequestImpl value,
+          $Res Function(_$FetchQuotesRequestImpl) then) =
+      __$$FetchQuotesRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String text, String author});
 }
 
 /// @nodoc
-class __$$QuoteDtoImplCopyWithImpl<$Res>
-    extends _$QuoteDtoCopyWithImpl<$Res, _$QuoteDtoImpl>
-    implements _$$QuoteDtoImplCopyWith<$Res> {
-  __$$QuoteDtoImplCopyWithImpl(
-      _$QuoteDtoImpl _value, $Res Function(_$QuoteDtoImpl) _then)
+class __$$FetchQuotesRequestImplCopyWithImpl<$Res>
+    extends _$FetchQuotesRequestCopyWithImpl<$Res, _$FetchQuotesRequestImpl>
+    implements _$$FetchQuotesRequestImplCopyWith<$Res> {
+  __$$FetchQuotesRequestImplCopyWithImpl(_$FetchQuotesRequestImpl _value,
+      $Res Function(_$FetchQuotesRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -91,7 +87,7 @@ class __$$QuoteDtoImplCopyWithImpl<$Res>
     Object? text = null,
     Object? author = null,
   }) {
-    return _then(_$QuoteDtoImpl(
+    return _then(_$FetchQuotesRequestImpl(
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -105,12 +101,9 @@ class __$$QuoteDtoImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$QuoteDtoImpl implements _QuoteDto {
-  const _$QuoteDtoImpl({required this.text, required this.author});
 
-  factory _$QuoteDtoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QuoteDtoImplFromJson(json);
+class _$FetchQuotesRequestImpl implements _FetchQuotesRequest {
+  const _$FetchQuotesRequestImpl({required this.text, required this.author});
 
   @override
   final String text;
@@ -119,43 +112,33 @@ class _$QuoteDtoImpl implements _QuoteDto {
 
   @override
   String toString() {
-    return 'QuoteDto(text: $text, author: $author)';
+    return 'FetchQuotesRequest(text: $text, author: $author)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QuoteDtoImpl &&
+            other is _$FetchQuotesRequestImpl &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.author, author) || other.author == author));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, text, author);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$QuoteDtoImplCopyWith<_$QuoteDtoImpl> get copyWith =>
-      __$$QuoteDtoImplCopyWithImpl<_$QuoteDtoImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$QuoteDtoImplToJson(
-      this,
-    );
-  }
+  _$$FetchQuotesRequestImplCopyWith<_$FetchQuotesRequestImpl> get copyWith =>
+      __$$FetchQuotesRequestImplCopyWithImpl<_$FetchQuotesRequestImpl>(
+          this, _$identity);
 }
 
-abstract class _QuoteDto implements QuoteDto {
-  const factory _QuoteDto(
+abstract class _FetchQuotesRequest implements FetchQuotesRequest {
+  const factory _FetchQuotesRequest(
       {required final String text,
-      required final String author}) = _$QuoteDtoImpl;
-
-  factory _QuoteDto.fromJson(Map<String, dynamic> json) =
-      _$QuoteDtoImpl.fromJson;
+      required final String author}) = _$FetchQuotesRequestImpl;
 
   @override
   String get text;
@@ -163,6 +146,6 @@ abstract class _QuoteDto implements QuoteDto {
   String get author;
   @override
   @JsonKey(ignore: true)
-  _$$QuoteDtoImplCopyWith<_$QuoteDtoImpl> get copyWith =>
+  _$$FetchQuotesRequestImplCopyWith<_$FetchQuotesRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
