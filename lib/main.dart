@@ -27,16 +27,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final TextEditingController input1Controller = TextEditingController();
-  final TextEditingController input2Controller = TextEditingController();
-  final TextEditingController input3Controller = TextEditingController();
+  final TextEditingController inputController = TextEditingController();
 
-  // jakie są różnice między tymi typami zmiennych
-  // late final double result; // result jest nie nullowalne i musi być inicjowane w kodzie(np w initState) inaczej wywali error
-  // var result; //zmienna nie ma określonego typu
-  double? result; // result może być nullem i nie powoduje to errora
-  String empty = '';
-  String operationMark = '?';
+  double? result; // zrób tak żeby result nie był nullowalny
 
   @override
   Widget build(BuildContext context) {
@@ -52,29 +45,14 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Expanded(
                   child: TextField(
-                    controller: input1Controller,
-                    keyboardType: TextInputType.number,
-                  ),
-                ),
-                Text(operationMark),
-                Expanded(
-                  child: TextField(
-                    controller: input2Controller,
-                    keyboardType: TextInputType.number,
-                  ),
-                ),
-                Text(operationMark),
-                Expanded(
-                  child: TextField(
-                    controller: input3Controller,
+                    controller: inputController,
                     keyboardType: TextInputType.number,
                   ),
                 ),
                 const Text('='),
                 Expanded(
-                  child: (result == null)
-                      ? Text('$empty')
-                      : Text('$result'), // zrób tak że jeżeli result jest nullem to wyświetli się pusty string ('')
+                  child: Text(
+                      '$result'),
                 ),
               ],
             ),
@@ -84,64 +62,9 @@ class _HomePageState extends State<HomePage> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    final num1 = double.parse(input1Controller.text);
-                    final num2 = double.parse(input2Controller.text);
-                    // zrób tak żeby ta funkcja działała
-                    add(
-                      num1,
-                      num2,
-                    );
-                    setState(() {
-                      operationMark = '+';
-                    });
+                    add();
                   },
-                  child: const Text('+'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    final num1 = double.parse(input1Controller.text);
-                    final num2 = double.parse(input2Controller.text);
-                    final num3 = double.parse(input3Controller.text);
-                    addExtended(
-                      num1,
-                      num2,
-                      num3,
-                    );
-                    setState(() {
-                      operationMark = '+';
-                    });
-                  },
-                  child: const Text('++'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    final num1 = double.parse(input1Controller.text);
-                    final num2 = double.parse(input2Controller.text);
-                    subtract(
-                      num1,
-                      num2,
-                    );
-                    setState(() {
-                      operationMark = '-';
-                    });
-                  },
-                  child: const Text('-'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    final num1 = double.parse(input1Controller.text);
-                    final num2 = double.parse(input2Controller.text);
-                    final num3 = double.parse(input3Controller.text);
-                    subtractExtended(
-                      num1,
-                      num2,
-                      num3,
-                    );
-                    setState(() {
-                      operationMark = '-';
-                    });
-                  },
-                  child: const Text('--'),
+                  child: const Text('calculate'),
                 ),
               ],
             ),
@@ -151,43 +74,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // napisz analogiczną funjcę z odejmowaniem
-  void add(
-    double num1,
-    double num2,
-  ) {
-    setState(() {
-      result = num1 + num2;
-    });
-  }
-
-  void subtract(
-    double num1,
-    double num2,
-  ) {
-    setState(() {
-      result = num1 - num2;
-    });
-  }
-
-// napisz analogiczne funkcje ale z 3 parametrami
-  void addExtended(
-    double num1,
-    double num2,
-    double num3,
-  ) {
-    setState(() {
-      result = num1 + num2 + num3;
-    });
-  }
-
-  void subtractExtended(
-    double num1,
-    double num2,
-    double num3,
-  ) {
-    setState(() {
-      result = num1 - num2 - num3;
-    });
-  }
+  // zrób tak żeby funkcja liczyła wynik z tego co user wpisze
+  // np: 5+5+5 = 25, 4+2+2+4 = 12 itp
+  void add() {}
 }
