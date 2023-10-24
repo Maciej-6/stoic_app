@@ -29,8 +29,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final TextEditingController inputController = TextEditingController();
 
-  double? result; // zrób tak żeby result nie był nullowalny
-
+  // double? result; // zrób tak żeby result nie był nullowalny
+  double result = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,13 +46,12 @@ class _HomePageState extends State<HomePage> {
                 Expanded(
                   child: TextField(
                     controller: inputController,
-                    keyboardType: TextInputType.number,
+                    keyboardType: TextInputType.phone,
                   ),
                 ),
                 const Text('='),
                 Expanded(
-                  child: Text(
-                      '$result'),
+                  child: Text('$result'),
                 ),
               ],
             ),
@@ -76,5 +75,19 @@ class _HomePageState extends State<HomePage> {
 
   // zrób tak żeby funkcja liczyła wynik z tego co user wpisze
   // np: 5+5+5 = 25, 4+2+2+4 = 12 itp
-  void add() {}
+  void add() {
+    String input = inputController.text;
+    List<String> inputList = input.split('+');
+    double sum = 0.0;
+
+    for (String input in inputList) {
+      if (inputList.isNotEmpty) {
+        sum += double.parse(input);
+      }
+    }
+
+    setState(() {
+      result = sum;
+    });
+  }
 }
