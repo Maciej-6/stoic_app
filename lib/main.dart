@@ -1,7 +1,37 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
+}
+
+// swótrz trzy podklasy ControllerState: Loading, Initial, Data
+// Data powinna zwierać pola do przetrzymowania quote
+sealed class ControllerState {}
+
+
+class Controller {
+  final _quotes = [
+    'Jestem za, a nawet przeciw',
+    'Odpowiem wymijająco wprost',
+    'Zdrowie wasze w gardła nasze!',
+    'Nie chcem, ale muszem!',
+    'Dodatnie i ujemne plusy',
+    'Moja ilość trochę psuje moją jakość',
+    'Ja już nie szukam pieniędzy za książki, bo te całkowicie udupiłem w sprawach społecznych…',
+    'Nie można mieć pretensji do Słońca, że kręci się wokół Ziemi',
+    'To pan w niedzielę wszedł tu jak do obory i ani be, ani me, ani kukuryku',
+    'Tonący brzytwy, chwyta się byle czego!',
+    'Dokonałem zwrotu o 360 stopni',
+    'Miała być demokracja, a tu każdy wygaduje, co chce!',
+    'Będę jeździł z siekierą po kraju i ciął złodziei',
+  ];
+
+  // zrób funkcję, która po jednej sekundzie zwróci losowy cytat z listy _quotes
+  Future<String> getQuote() async {
+
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -27,67 +57,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final TextEditingController inputController = TextEditingController();
+  final controller = Controller();
+  ControllerState state = Initial();
 
-  // double? result; // zrób tak żeby result nie był nullowalny
-  double result = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Calculator'),
+        title: const Text('Wałęsa na dziś ( ͡° ͜ʖ ͡°)'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: inputController,
-                    keyboardType: TextInputType.phone,
-                  ),
-                ),
-                const Text('='),
-                Expanded(
-                  child: Text('$result'),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    add();
-                  },
-                  child: const Text('calculate'),
-                ),
-              ],
-            ),
-          ],
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // użyj seald class-y i switch do wyświetlania odpowiedniego widgetu w zależności od stanu
+            // https://medium.com/@aliammariraq/sealed-classes-in-dart-unlocking-powerful-features-d8dba185925f to Ci może pomóc
+              ElevatedButton(
+                onPressed: () {
+                // wywołaj funkcję getQuote i odpowiednio aktualizuj state w zależności od progresu
+                },
+                child: const Text('Losuj'),
+              ),
+            ],
+          ),
         ),
       ),
     );
-  }
-
-  // zrób tak żeby funkcja liczyła wynik z tego co user wpisze
-  // np: 5+5+5 = 25, 4+2+2+4 = 12 itp
-  void add() {
-    String input = inputController.text;
-    List<String> inputList = input.split('+');
-    double sum = 0.0;
-
-    for (String input in inputList) {
-      if (inputList.isNotEmpty) {
-        sum += double.parse(input);
-      }
-    }
-
-    setState(() {
-      result = sum;
-    });
   }
 }
