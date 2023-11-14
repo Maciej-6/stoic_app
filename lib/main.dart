@@ -9,7 +9,12 @@ void main() {
 // swótrz trzy podklasy ControllerState: Loading, Initial, Data
 // Data powinna zwierać pola do przetrzymowania quote
 sealed class ControllerState {}
-
+class Initial extends ControllerState {}
+class Loading extends ControllerState {}
+class Data extends ControllerState {
+  final String quote;
+  Data(this.quote);
+}
 
 class Controller {
   final _quotes = [
@@ -30,7 +35,10 @@ class Controller {
 
   // zrób funkcję, która po jednej sekundzie zwróci losowy cytat z listy _quotes
   Future<String> getQuote() async {
-
+    await Future.delayed(const Duration(seconds: 1));
+    final random = Random();
+    final quote = random.nextInt(_quotes.length);
+    return _quotes[quote];
   }
 }
 
@@ -59,7 +67,15 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final controller = Controller();
   ControllerState state = Initial();
-
+  void fetchRandomQuote() async {
+    setState(() {
+      state = Loading();
+    });
+    final quote = await controller.getQuote();
+    setState(() {
+      state = Data(quote);
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,11 +89,22 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // użyj seald class-y i switch do wyświetlania odpowiedniego widgetu w zależności od stanu
-            // https://medium.com/@aliammariraq/sealed-classes-in-dart-unlocking-powerful-features-d8dba185925f to Ci może pomóc
+              // https://medium.com/@aliammariraq/sealed-classes-in-dart-unlocking-powerful-features-d8dba185925f to Ci może pomóc
+              Container(
+                height: 100,
+                child: Center(
+                  child: switch(state) {
+                    Initial()=> const Text("Kliknij 'Losuj'"),
+                    Loading()=> const CircularProgressIndicator(),
+                    Data(quote: String quote)=> Text(quote),
+                  },
+                ),
+              ),
               ElevatedButton(
-                onPressed: () {
-                // wywołaj funkcję getQuote i odpowiednio aktualizuj state w zależności od progresu
-                },
+                onPressed: fetchRandomQuote,
+                // onPressed: () {
+                //   // wywołaj funkcję getQuote i odpowiednio aktualizuj state w zależności od progresu
+                // },
                 child: const Text('Losuj'),
               ),
             ],
